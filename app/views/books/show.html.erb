@@ -1,4 +1,3 @@
-
 <div class="row">
 	<div class="col-xs-3">
 
@@ -23,20 +22,8 @@
 					</td>
 					<td><%= link_to @post_book.title, @post_book %></td>
 					<td><%= @post_book.body %></td>
-					<td>
-						<% if @post_book.favorited_by?(current_user) %>
-							<li>
-								<%= link_to book_favorites_path(@post_book), method: :delete do %>
-								<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-								<%= @post_book.favorites.count %><% end %>
-							</li>
-							<% else %>
-							<li>
-								<%= link_to book_favorites_path(@post_book), method: :post do %>
-								<i class="fa fa-heart-o" aria-hidden="true"></i>
-								<%= @post_book.favorites.count %><% end %>
-							</li>
-						<% end %>						
+					<td id="favorite-<%= @post_book.id %>">
+						<%= render 'favorite', book: @post_book %>
 					</td>
 					<td>
 						コメント数:<%= @post_book.book_comments.count %>
