@@ -58,15 +58,7 @@
 		</table>			
 
 		<h2>New comment</h2>
-			<%= form_for [@post_book, @comment] do |f| %>
-				<div class="row">
-					<div class="col-sm-12">
-						<%= f.text_area :comment, rows:'5', class: "form-control" %>
-						<%= f.submit "送信", class: "btn btn-default pull-right" %>
-					</div>
-				</div>
-			<% end %>
-
+			<%= render 'book_comment' %>
 	</div>
 </div>
 
