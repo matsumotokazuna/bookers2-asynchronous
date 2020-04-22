@@ -1,0 +1,4 @@
+<%= form_with(model: [@post_book, @comment], remote: true) do |f| %>
+    <%= f.text_area :comment, rows:'5', class: "form-control" %>
+    <%= f.submit "送信", class: "btn btn-default pull-right" %>
+<% end %>
